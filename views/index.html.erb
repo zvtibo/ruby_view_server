@@ -3,7 +3,14 @@
   The time is now:
   <%= Time.now %>
 </p>
-
+<p>
+  <%= @request.query %>
+ <% if @request.query['vehicle'] && !@request.query['vehicle'].empty? %>
+    Hello there <%= @request.query['vehicle'] %>
+  <% else %>
+    Enter thy name
+  <% end %>
+</p>
 <p>
   My Name is:
   <%= @name %>
